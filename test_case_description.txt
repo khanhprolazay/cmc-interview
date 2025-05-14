@@ -1,0 +1,29 @@
+Frontend test case
+
+
+Test case for bulk importing feature
+    Frontend testcase
+    1. File Upload
+        1.1. Ensure the input only accepts valid JSON files
+        1.2. Ensure the "Submit" button is disabled when no file is selected.
+        1.3. Ensure the "Submit" button is enabled when a file is selected.
+        1.4. Test the loading state during file Upload
+        1.5. Ensure the error message is displayed if the file cannot be parsed
+    2. Prevew data before submitting
+        2.1. Ensure the parsed asset data is displayed in a preview
+    3. Submit bulk button
+        3.1 Ensure tat assets are successfully submitted when the "Bulk Import" button is clicked
+
+    Backend test case
+    1. File Upload Endpoint
+        1.1 Ensure the api accepts only JSON files
+    2. JSON parsing
+        2.2. Ensure that the backend can correctl parse valid JSON files
+        2.3. Ensure the backend returns an error if the JSON file is invalid.
+    3. Bulk Asset Creation
+        3.1 Ensure that assets are correctly created in the database when the JSON file is valid
+        3.2. Ensure the databse is not modified if there is an error in asset creation
+        3.3. Verify that the backend return correct success message
+    4. Error handling
+        4.1 Ensure that the backend handle missing file cases
+        4.2. Ensure the backend returns an error if the uploaded JSON file has incorrect data type

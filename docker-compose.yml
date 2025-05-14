@@ -1,0 +1,25 @@
+version: "2" # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+
+  mysql:
+    platform: linux/amd64
+    image: mysql:5.7.34
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+    networks:
+      - data-system-net
+      - app-net
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+volumes:
+  mysql-data:
+    driver: local
+networks:
+  app-net:
+    driver: bridge
+  data-system-net:
+    driver: bridge
